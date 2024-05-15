@@ -189,3 +189,6 @@
             -    `sendError()`: Envía un error HTTP al cliente.
             -    `sendRedirect()`: Redirige la respuesta a una nueva URL.
             -    `setStatus()`: Establece el código de estado HTTP para la respuesta.
+
+<h1 align="center">Ciclo de Vida de un Servlet</h1>
+<p align="center"><img width="800" alt="image" src="https://github.com/CCrisstian/Java_WebApp/assets/111469216/e446d5e2-5f9d-4868-9e9a-ab00a4fcc82f"></p>

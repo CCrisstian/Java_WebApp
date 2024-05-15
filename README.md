@@ -144,8 +144,8 @@
 -    <b>Servlet</b>
         - <b>Descripción</b>: Es la interfaz base que define los métodos que deben implementar todos los servlets.
         - <b>Métodos Principales:</b>
-                - init(): Inicializa el servlet.
-                -  service(): Procesa las solicitudes del cliente.
+                -    init(): Inicializa el servlet.
+                -    service(): Procesa las solicitudes del cliente.
               
 -    <b>ServletRequest</b>
 -    <b>ServletResponse</b>

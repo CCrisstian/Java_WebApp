@@ -135,3 +135,7 @@
         - <b>Propósito</b>: Maneja solicitudes `HTTP TRACE`.
         - <b>Uso Común</b>: Realizar una solicitud de eco para fines de depuración.
         - <b>Descripción</b>:  Devuelve la solicitud original que recibió el servidor, útil para ver cómo las solicitudes son modificadas por los servidores intermedios.       
+
+<h1 align="center">Clases e Interfaces del Servlet</h1>
+<p align="center"><img width="800" alt="image" src="https://github.com/CCrisstian/Java_WebApp/assets/111469216/94cda8bf-21d0-4ed6-85e3-a1013979734d"></p>
+

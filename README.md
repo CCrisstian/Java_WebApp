@@ -58,3 +58,7 @@
 -  <b>Servlet genera una respuesta</b>: El servlet crea una respuesta (usualmente en forma de HTML, JSON, XML, etc.) y la envía de vuelta al cliente a través del objeto `HttpServletResponse`.
 -  <b>Cliente recibe la respuesta</b>: El navegador u otro cliente recibe la respuesta HTTP y la muestra o la procesa según sea necesario.
 
+<h1 align="center">Patrón MVC</h1>
+
+<p align="center"><img width="719" alt="image" src="https://github.com/CCrisstian/Java_WebApp/assets/111469216/ee5da5fa-2288-4d87-818a-b87bdff6ddc0"></p>
+

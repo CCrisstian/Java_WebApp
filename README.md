@@ -191,4 +191,23 @@
             -    `setStatus()`: Establece el código de estado HTTP para la respuesta.
 
 <h1 align="center">Ciclo de Vida de un Servlet</h1>
+<p>El ciclo de vida de un servlet en Jakarta EE define las etapas por las que pasa un servlet desde su creación hasta su destrucción.</p>
 <p align="center"><img width="800" alt="image" src="https://github.com/CCrisstian/Java_WebApp/assets/111469216/e446d5e2-5f9d-4868-9e9a-ab00a4fcc82f"></p>
+
+-    <b>Compilación y Registro en el Contenedor:</b>
+        -    <b>Descripción</b>: Antes de que un servlet pueda ser utilizado, debe ser compilado y registrado en el contenedor de servlets (como Apache Tomcat). Esta etapa se realiza generalmente durante el despliegue de la aplicación web.
+-    <b>Inicialización (`init()`):</b>
+        -    <b>Descripción</b>: Una vez registrado, el contenedor llama al método `init()` del servlet para inicializarlo. Este método se ejecuta solo una vez, cuando el servlet se carga por primera vez en la memoria.
+        -    <b>Propósito</b>: Configurar el servlet, inicializar recursos como conexiones a bases de datos, etc.
+-    <b>Servicio (`service()`):</b>
+        -    <b>Descripción</b>: Después de la inicialización, el contenedor puede llamar al método `service()` del servlet para manejar las solicitudes entrantes. Este método se llama para cada solicitud HTTP recibida.
+        -    <b>Propósito</b>: Determinar el tipo de solicitud HTTP (GET, POST, PUT, DELETE, etc.) y llamar al método específico correspondiente (`doGet()`, `doPost()`, etc.).
+-    <b>Manejo de Solicitudes Específicas (`doGet()`, `doPost()`, etc.):</b>
+        -    <b>Descripción</b>: Dependiendo del tipo de solicitud HTTP, el método `service()` llama al método correspondiente del servlet para procesar la solicitud. Los métodos más comunes son `doGet()` y `doPost()`.
+        -    <b>Propósito</b>: Manejar las solicitudes HTTP específicas y generar la respuesta adecuada.
+-    <b>Creación de Hilos para Cada Solicitud:</b>
+        -    <b>Descripción</b>: Por cada solicitud HTTP, el contenedor puede crear un nuevo hilo (`thread`) para manejarla, permitiendo que el servlet procese múltiples solicitudes simultáneamente.
+        -    <b>Propósito</b>: Mejorar la concurrencia y el rendimiento de la aplicación.
+-    <b>Destrucción (`destroy()`):</b>
+        -    <b>Descripción</b>: Cuando el contenedor de servlets decide que el `servlet` debe ser retirado de servicio (por ejemplo, durante el apagado del servidor o la recarga de la aplicación), llama al método `destroy()`. Este método se ejecuta una sola vez.
+        -    <b>Propósito</b>: Liberar los recursos que fueron asignados durante la inicialización, como cerrar conexiones a bases de datos, liberar memoria, etc.

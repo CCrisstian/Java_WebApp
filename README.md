@@ -139,13 +139,53 @@
 <h1 align="center">Clases e Interfaces del Servlet</h1>
 <p align="center"><img width="800" alt="image" src="https://github.com/CCrisstian/Java_WebApp/assets/111469216/94cda8bf-21d0-4ed6-85e3-a1013979734d"></p>
 
-<h3>Clases</h3>
+<h3>Interfaces</h3>
 
 -    <b>Servlet</b>
         - <b>Descripción</b>: Es la interfaz base que define los métodos que deben implementar todos los servlets.
         - <b>Métodos Principales:</b>
-                -    init(): Inicializa el servlet.
-                -    service(): Procesa las solicitudes del cliente.
-              
+            -    `init()`: Inicializa el servlet.
+            -    `service()`: Procesa las solicitudes del cliente.
+            -    `destroy()`: Libera los recursos cuando el servlet es destruido.
+            -    `getServletConfig()`: Proporciona la configuración del servlet.
+            -    `getServletInfo()`: Proporciona información sobre el servlet.
 -    <b>ServletRequest</b>
+        - <b>Descripción</b>: Esta interfaz define un objeto que contiene la solicitud del cliente al servlet.
+        - <b>Métodos Principales:</b>
+            -    `getParameter()`: Obtiene el valor de un parámetro de solicitud.
+            -    `getAttribute()`: Obtiene un atributo de la solicitud.
+            -    `getInputStream()`: Obtiene un flujo de entrada para leer los datos de la solicitud.
+            -    `getReader()`: Obtiene un lector para leer los datos de la solicitud..
 -    <b>ServletResponse</b>
+        - <b>Descripción</b>: Esta interfaz define un objeto que el servlet utiliza para devolver una respuesta al cliente.
+        - <b>Métodos Principales:</b>
+            -    `getOutputStream()`: Obtiene un flujo de salida para escribir la respuesta.
+            -    `getWriter()`: Obtiene un escritor para escribir la respuesta.
+            -    `setContentType()`: Establece el tipo de contenido de la respuesta.
+            -    `setCharacterEncoding()`: Establece la codificación de caracteres para la respuesta.
+
+<h3>Clases</h3>
+
+-    <b>GenericServlet</b>
+        - <b>Descripción</b>:  Es una clase abstracta que implementa la interfaz `Servlet` y proporciona una implementación básica de los métodos. Los desarrolladores pueden extender esta clase para crear servlets más específicos.
+        - <b>Métodos Principales:</b>
+            -    `init()`, `destroy()`, `getServletConfig()`, `getServletInfo()`: Implementaciones básicas de los métodos de la interfaz `Servlet`.
+            -    `service()`: Método abstracto que debe ser implementado por las subclases para manejar las solicitudes.
+-    <b>HttpServlet</b>
+        - <b>Descripción</b>:  Extiende `GenericServlet` y proporciona una implementación más específica para manejar solicitudes HTTP. Esta es la clase que la mayoría de los desarrolladores extienden cuando crean servlets HTTP.
+        - <b>Métodos Principales:</b>
+            -    `doGet()`, `doPost()`, `doPut()`, `doDelete()`, `doHead()`, `doOptions()`, `doTrace()`:  Métodos que manejan los diferentes tipos de solicitudes HTTP. Los desarrolladores pueden sobrescribir estos métodos para implementar el comportamiento deseado.
+-    <b>HttpServletRequest</b>
+        - <b>Descripción</b>:  Extiende `ServletRequest` y proporciona funcionalidad adicional específica para solicitudes HTTP. Permite obtener información específica de las solicitudes HTTP, como los encabezados y los parámetros de la URL.
+        - <b>Métodos Principales:</b>
+            -    `getHeader()`: Obtiene el valor de un encabezado específico.
+            -    `getCookies()`: Obtiene las cookies enviadas con la solicitud.
+            -    `getMethod()`: Obtiene el método HTTP de la solicitud (GET, POST, etc.).
+            -    `getRequestURL()`, `getRequestURI()`: Obtiene la URL o URI de la solicitud.
+-    <b>HttpServletResponse</b>
+        - <b>Descripción</b>:  Extiende `ServletResponse` y proporciona funcionalidad adicional específica para respuestas HTTP. Permite definir códigos de estado HTTP, escribir encabezados HTTP, y gestionar redirecciones.
+        - <b>Métodos Principales:</b>
+            -    `addCookie()`: Añade una cookie a la respuesta.
+            -    `sendError()`: Envía un error HTTP al cliente.
+            -    `sendRedirect()`: Redirige la respuesta a una nueva URL.
+            -    `setStatus()`: Establece el código de estado HTTP para la respuesta.

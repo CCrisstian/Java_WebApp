@@ -103,3 +103,8 @@
         - `Content-Type`: Indica el tipo de contenido de la respuesta, por ejemplo, text/html para HTML.
         - `Set-Cookie`: Utilizado para enviar cookies al cliente.
         - `Content-Length`: Indica la longitud del contenido de la respuesta.
+
+<h1 align="center">Métodos HTTP soportados</h1>
+
+<p align="center"><img width="719" alt="image" src="https://github.com/CCrisstian/Java_WebApp/assets/111469216/253f5bb2-4438-4465-9756-0701da6b921b"></p>
+

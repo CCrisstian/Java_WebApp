@@ -75,3 +75,31 @@
     -  <b>JSP (JavaServer Pages)</b>: Actúan como la <b>Vista</b>. Las <b>JSP</b> son responsables de generar la interfaz de usuario dinámica en respuesta a las solicitudes del cliente. Pueden incluir HTML, CSS y JavaScript, y se utilizan para presentar los datos proporcionados por el <b>Controlador</b>.
     -  <b>Model (Modelo)</b>: Representa la lógica de negocio y la gestión de datos. Los <b>servlets</b> interactúan con el modelo para realizar operaciones sobre los datos, como consultas a la base de datos o cálculos lógicos.
 -  <b>HTTP Response</b>: Después de procesar la solicitud, el <b>servlet</b> selecciona la vista adecuada y genera una respuesta HTTP, que se envía de vuelta al navegador del cliente. Esta respuesta puede incluir la página HTML generada por la JSP con los datos dinámicos.
+
+<h1 align="center">"Request" y "Response"</h1>
+<h3>Request (Petición Web)</h3>
+<p>Un <b>Request</b> es una solicitud enviada por un cliente (como un navegador web) al servidor. Incluye varios componentes esenciales:</p>
+
+-    <b>Información que es enviada desde un cliente hacia el servidor</b>: Esto incluye todo el contenido de la solicitud que el cliente envía al servidor.
+-    <b>Datos ingresados y enviados por el usuario</b>: Cuando un usuario interactúa con un formulario web y lo envía, esos datos se incluyen en la solicitud.
+-    <b>Métodos HTTP (`Get` o `Post`):</b>
+        -    `GET`: Este método se usa para solicitar datos de un servidor. Los datos de la solicitud se envían en la URL. Es comúnmente utilizado para obtener recursos, como páginas web o imágenes.
+        -    `POST`: Este método se usa para enviar datos al servidor para que sean procesados, como al enviar un formulario. Los datos se envían en el cuerpo de la solicitud y no en la URL, lo que lo hace más seguro para enviar información sensible.
+-    <b>Cabeceras HTTP (Headers)</b>: Proveen información adicional sobre la solicitud. Algunos ejemplos incluyen:
+        -    `User-Agent`: Informa sobre el cliente que está realizando la solicitud.
+        -    `Accept`: Especifica los tipos de contenido que el cliente puede procesar.
+        -    `Content-Type`: Indica el tipo de contenido que se está enviando en el cuerpo de la solicitud, por ejemplo, `application/json` para datos en formato JSON.
+<h3>Response (Respuesta Web)</h3>
+<p>Un <b>Response</b> es la respuesta enviada por el servidor al cliente en respuesta a una solicitud. Incluye varios componentes esenciales:</p>
+
+-    <b>Información que es enviada al cliente desde el servidor</b>: Contiene todos los datos y mensajes que el servidor envía de vuelta al cliente.
+-    <b>Texto (html, plain, json, xml) o datos binarios (imágenes, pdf, videos)</b>: El contenido de la respuesta puede ser de varios tipos, dependiendo de lo que se esté solicitando:
+        -    <b>HTML</b>: Para páginas web.
+        -    <b>Plain text</b>: Texto sin formato.
+        -    <b>JSON</b>: Datos en formato JSON, comúnmente usados en aplicaciones web modernas para enviar datos estructurados.
+        -    <b>XML</b>: Otro formato para datos estructurados.
+        -    <b>Datos binarios</b>: Archivos como imágenes, videos, documentos PDF, etc.
+-    <b>HTTP headers, cookies, etc.</b>: Al igual que las solicitudes, las respuestas también contienen cabeceras que proveen información adicional sobre la respuesta:
+        - `Content-Type`: Indica el tipo de contenido de la respuesta, por ejemplo, text/html para HTML.
+        - `Set-Cookie`: Utilizado para enviar cookies al cliente.
+        - `Content-Length`: Indica la longitud del contenido de la respuesta.

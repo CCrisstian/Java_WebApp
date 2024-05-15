@@ -45,3 +45,16 @@
 -	<b>Facilidad de Configuración</b>: Tomcat ofrece una configuración flexible y fácil de administrar a través de archivos de configuración XML simples y claros. Esto facilita la personalización del entorno de ejecución según las necesidades del proyecto.
 -	<b>Administración y Monitoreo</b>: Tomcat proporciona una serie de herramientas y utilidades para administrar y monitorear el servidor, incluidas interfaces gráficas y de línea de comandos para realizar tareas de administración como la implementación de aplicaciones, la configuración del servidor y la supervisión del rendimiento.
 -	<b>Compatibilidad con Java EE</b>: Aunque Tomcat es principalmente un contenedor de servlets y JSP, también puede integrarse con otras tecnologías de Java EE, como JDBC para la conexión a bases de datos, JNDI para la gestión de recursos y JTA para la transaccionalidad, lo que lo hace adecuado para implementar una amplia gama de aplicaciones empresariales.
+
+<h1 align="center">Servlets</h1>
+<p>Los <b>servlets</b> en Jakarta EE 9 son componentes Java que se ejecutan en un servidor web y están diseñados para responder a solicitudes HTTP, como las generadas por navegadores web. Los <b>servlets</b> son una parte fundamental de la especificación Jakarta Servlet 5.0. Permiten la creación de aplicaciones web dinámicas y se utilizan comúnmente para procesar formularios, manejar solicitudes de usuario, interactuar con bases de datos, generar respuestas dinámicas y realizar muchas otras tareas relacionadas con la web.</p>
+<p align="center"><img width="719" alt="image" src="https://github.com/CCrisstian/Java_WebApp/assets/111469216/59a3e412-fefc-42e9-bd0a-1b1ba2948dd3"></p>
+<p>Funcionamiento básico de los servlets en Jakarta EE 9:</p>
+
+-  <b>Cliente realiza una solicitud HTTP</b>: Un cliente, como un navegador web, realiza una solicitud HTTP (GET, POST, etc.) al servidor web.
+-  <b>Servidor web recibe la solicitud</b>: El servidor web, donde está desplegado el contenedor de servlets (como Apache Tomcat), recibe la solicitud HTTP.
+-  <b>Contenedor de servlets maneja la solicitud</b>: El contenedor de servlets intercepta la solicitud y la dirige al servlet correspondiente basado en la configuración de mapeo de URL.
+-  <b>Servlet procesa la solicitud</b>: El servlet ejecuta su método `service()`, que delega a los métodos `doGet()`, `doPost()`, `doPut()`, etc., según el tipo de solicitud. En estos métodos, el servlet procesa la solicitud (por ejemplo, leyendo parámetros, interactuando con bases de datos, realizando lógica de negocio).
+-  <b>Servlet genera una respuesta</b>: El servlet crea una respuesta (usualmente en forma de HTML, JSON, XML, etc.) y la envía de vuelta al cliente a través del objeto `HttpServletResponse`.
+-  <b>Cliente recibe la respuesta</b>: El navegador u otro cliente recibe la respuesta HTTP y la muestra o la procesa según sea necesario.
+

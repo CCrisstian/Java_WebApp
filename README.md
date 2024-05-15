@@ -105,6 +105,33 @@
         - `Content-Length`: Indica la longitud del contenido de la respuesta.
 
 <h1 align="center">Métodos HTTP soportados</h1>
+<p align="center"><img width="719" alt="image" src="https://github.com/CCrisstian/Java_WebApp/assets/111469216/3d20e565-73fb-46c6-afaa-fc1c2b029adf"></p>
 
-<p align="center"><img width="719" alt="image" src="https://github.com/CCrisstian/Java_WebApp/assets/111469216/253f5bb2-4438-4465-9756-0701da6b921b"></p>
-
+-    `doDelete`
+        - <b>Propósito</b>: Maneja solicitudes `HTTP DELETE`.
+        - <b>Uso Común</b>: Eliminar un recurso especificado por la URL.
+        - <b>Descripción</b>: Se utiliza cuando un cliente quiere eliminar un recurso específico. En aplicaciones RESTful, corresponde a la operación DELETE.
+-    `doGet`
+        - <b>Propósito</b>: Maneja solicitudes `HTTP GET`.
+        - <b>Uso Común</b>: Recuperar información del servidor, como una página web o datos de una API.
+        - <b>Descripción</b>:  Es el método más común y se utiliza para obtener datos del servidor sin modificar su estado.    
+-    `doHead`
+        - <b>Propósito</b>: Maneja solicitudes `HTTP HEAD`.
+        - <b>Uso Común</b>: Recuperar los encabezados de una respuesta sin el cuerpo.
+        - <b>Descripción</b>: Similar a `doGet`, pero no devuelve el cuerpo del mensaje, solo los encabezados. Útil para obtener metadatos sobre un recurso.   
+-    `doOptions`
+        - <b>Propósito</b>: Maneja solicitudes `HTTP OPTIONS`.
+        - <b>Uso Común</b>: Determinar los métodos HTTP permitidos para un recurso específico.
+        - <b>Descripción</b>: Proporciona información sobre las capacidades del servidor y los métodos HTTP que acepta.       
+-    `doPost`
+        - <b>Propósito</b>: Maneja solicitudes `HTTP POST`.
+        - <b>Uso Común</b>: Enviar datos al servidor para crear o actualizar un recurso.
+        - <b>Descripción</b>: Se utiliza para enviar datos al servidor, como formularios o archivos. A menudo provoca cambios en el servidor.       
+-    `doPut`
+        - <b>Propósito</b>: Maneja solicitudes `HTTP PUT`.
+        - <b>Uso Común</b>: Actualizar un recurso existente o crear uno nuevo si no existe.
+        - <b>Descripción</b>: Similar a `POST`, pero se usa para enviar datos que reemplazan un recurso existente o crean uno nuevo en una ubicación específica.   
+-    `doTrace`
+        - <b>Propósito</b>: Maneja solicitudes `HTTP TRACE`.
+        - <b>Uso Común</b>: Realizar una solicitud de eco para fines de depuración.
+        - <b>Descripción</b>:  Devuelve la solicitud original que recibió el servidor, útil para ver cómo las solicitudes son modificadas por los servidores intermedios.       

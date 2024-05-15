@@ -60,9 +60,18 @@
 
 <h1 align="center">Patrón MVC</h1>
 <p>El patrón <b>MVC (Modelo-Vista-Controlador)</b> es un patrón de diseño arquitectónico que separa una aplicación en tres componentes principales: el <b>Modelo</b>, la <b>Vista</b> y el <b>Controlador</b>. Esta separación facilita la gestión y el mantenimiento de la aplicación, permitiendo que cada componente tenga una responsabilidad bien definida:</p>
-<p align="center"><img width="719" alt="image" src="https://github.com/CCrisstian/Java_WebApp/assets/111469216/ee5da5fa-2288-4d87-818a-b87bdff6ddc0"></p>
 
 -  <b>Modelo</b>: Maneja la lógica de negocio y los datos de la aplicación. Es responsable de acceder y manipular los datos, usualmente interactuando con una base de datos.
 -  <b>Vista</b>: Es responsable de presentar los datos al usuario. Esta capa muestra la interfaz de usuario y la forma en que los datos se presentan.
 -  <b>Controlador</b>: Actúa como intermediario entre la Vista y el Modelo. Procesa la entrada del usuario, invoca métodos en el Modelo y determina qué Vista mostrar como resultado.
 
+<p align="center"><img width="719" alt="image" src="https://github.com/CCrisstian/Java_WebApp/assets/111469216/ee5da5fa-2288-4d87-818a-b87bdff6ddc0"></p>
+
+-  <b>Cliente (Navegador Web)</b>: Los usuarios interactúan con la aplicación web a través del navegador.
+-  <b>HTTP Request</b>: Cuando el usuario realiza una acción (por ejemplo, hacer clic en un enlace o enviar un formulario), se envía una solicitud HTTP al servidor web.
+-  <b>Contenedor Web</b>: Es el entorno donde se despliegan y ejecutan las aplicaciones web. En este caso, el contenedor web incluye la "Capa Web MVC".
+-  <b>Capa Web MVC:</b>
+  -  <b>Servlets</b>: Actúan como el <b>Controlador</b> en el patrón <b>MVC</b>. Los <b>servlets</b> reciben la solicitud HTTP del cliente, procesan la entrada, interactúan con el modelo para recuperar o actualizar datos, y luego deciden cuál vista (por ejemplo, una JSP) mostrar al usuario.
+  -  <b>JSP (JavaServer Pages)</b>: Actúan como la <b>Vista</b>. Las <b>JSP</b> son responsables de generar la interfaz de usuario dinámica en respuesta a las solicitudes del cliente. Pueden incluir HTML, CSS y JavaScript, y se utilizan para presentar los datos proporcionados por el <b>Controlador</b>.
+  -  <b>Model (Modelo)</b>: Representa la lógica de negocio y la gestión de datos. Los <b>servlets</b> interactúan con el modelo para realizar operaciones sobre los datos, como consultas a la base de datos o cálculos lógicos.
+-  

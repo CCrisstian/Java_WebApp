@@ -233,3 +233,24 @@ Razones para Heredar de `HttpServlet`:
 -    <b>Interfaz Simplificada</b>: `HttpServlet` implementa la interfaz Servlet y proporciona implementaciones predeterminadas para muchos de los métodos de la interfaz, facilitando la creación de servlets sin tener que implementar todos los métodos desde cero.
 
 -    <b>Compatibilidad con Contenedores de Servlets</b>: Al heredar de `HttpServlet`, el servlet es compatible con cualquier contenedor de servlets que cumpla con la especificación de Jakarta EE. Esto asegura que el servlet se comporte de manera consistente en diferentes entornos de ejecución.
+
+<h2>HttpServletRequest y HttpServletResponse</h2>
+<p>HttpServletRequest y HttpServletResponse son dos interfaces clave en la API de Servlets de Jakarta EE que representan la solicitud y la respuesta HTTP, respectivamente. Estas interfaces proporcionan métodos para interactuar con los datos enviados por el cliente y los datos que se devolverán al cliente.</p>
+<h3>HttpServletRequest</h3>
+<p>La interfaz HttpServletRequest permite acceder a la información de la solicitud HTTP que el cliente (por ejemplo, un navegador web) envía al servidor. Aquí están algunos de los métodos y funcionalidades más importantes:</p>
+
+-    <b>Obtener Parámetros de Solicitud</b>:
+    -    `String getParameter(String name)`: Obtiene el valor de un parámetro de solicitud como una cadena de texto.
+    -    `String[] getParameterValues(String name)`: Obtiene todos los valores de un parámetro de solicitud que tiene múltiples valores.
+-    <b>Obtener Información del Cliente</b>:
+    -    `String getRemoteAddr()`: Obtiene la dirección IP del cliente.
+    -    `String getHeader(String name)`: Obtiene el valor de una cabecera HTTP específica.
+-    <b>Obtener Información de la Solicitud</b>:
+    -    `String getMethod()`: Obtiene el método HTTP de la solicitud (GET, POST, PUT, DELETE, etc.).
+    -    `String getRequestURI()`: Obtiene la URI de la solicitud.
+    -    `String getContextPath()`: Obtiene el contexto de la aplicación web.
+-    <b>Gestión de Sesiones</b>:
+    -    `HttpSession getSession()`: Obtiene la sesión actual asociada con esta solicitud.
+-    <b>Lectura del Cuerpo de la Solicitud</b>:
+    -    `BufferedReader getReader()`: Devuelve un BufferedReader para leer el cuerpo de la solicitud.
+    -    `ServletInputStream getInputStream()`: Devuelve un ServletInputStream para leer datos binarios del cuerpo de la solicitud.

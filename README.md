@@ -240,17 +240,34 @@ Razones para Heredar de `HttpServlet`:
 <p>La interfaz HttpServletRequest permite acceder a la información de la solicitud HTTP que el cliente (por ejemplo, un navegador web) envía al servidor. Aquí están algunos de los métodos y funcionalidades más importantes:</p>
 
 -    <b>Obtener Parámetros de Solicitud</b>:
-    -    `String getParameter(String name)`: Obtiene el valor de un parámetro de solicitud como una cadena de texto.
-    -    `String[] getParameterValues(String name)`: Obtiene todos los valores de un parámetro de solicitud que tiene múltiples valores.
+        -    `String getParameter(String name)`: Obtiene el valor de un parámetro de solicitud como una cadena de texto.
+        -    `String[] getParameterValues(String name)`: Obtiene todos los valores de un parámetro de solicitud que tiene múltiples valores.
 -    <b>Obtener Información del Cliente</b>:
-    -    `String getRemoteAddr()`: Obtiene la dirección IP del cliente.
-    -    `String getHeader(String name)`: Obtiene el valor de una cabecera HTTP específica.
+        -    `String getRemoteAddr()`: Obtiene la dirección IP del cliente.
+        -    `String getHeader(String name)`: Obtiene el valor de una cabecera HTTP específica.
 -    <b>Obtener Información de la Solicitud</b>:
-    -    `String getMethod()`: Obtiene el método HTTP de la solicitud (GET, POST, PUT, DELETE, etc.).
-    -    `String getRequestURI()`: Obtiene la URI de la solicitud.
-    -    `String getContextPath()`: Obtiene el contexto de la aplicación web.
+        -    `String getMethod()`: Obtiene el método HTTP de la solicitud (GET, POST, PUT, DELETE, etc.).
+        -    `String getRequestURI()`: Obtiene la URI de la solicitud.
+        -    `String getContextPath()`: Obtiene el contexto de la aplicación web.
 -    <b>Gestión de Sesiones</b>:
-    -    `HttpSession getSession()`: Obtiene la sesión actual asociada con esta solicitud.
+        -    `HttpSession getSession()`: Obtiene la sesión actual asociada con esta solicitud.
 -    <b>Lectura del Cuerpo de la Solicitud</b>:
-    -    `BufferedReader getReader()`: Devuelve un BufferedReader para leer el cuerpo de la solicitud.
-    -    `ServletInputStream getInputStream()`: Devuelve un ServletInputStream para leer datos binarios del cuerpo de la solicitud.
+        -    `BufferedReader getReader()`: Devuelve un BufferedReader para leer el cuerpo de la solicitud.
+        -    `ServletInputStream getInputStream()`: Devuelve un ServletInputStream para leer datos binarios del cuerpo de la solicitud.
+
+<h3>HttpServletResponse</h3>
+<p>La interfaz HttpServletResponse permite construir y enviar una respuesta HTTP al cliente. Aquí están algunos de los métodos y funcionalidades más importantes:</p>
+
+-    <b>Establecer el Estado de la Respuesta:
+        -    `void setStatus(int sc)`: Establece el código de estado HTTP de la respuesta.
+        -    `void sendError(int sc, String msg)`: Envía un error al cliente con el código de estado y el mensaje especificado.
+-    <b>Establecer Cabeceras de Respuesta:
+        -    `void setHeader(String name, String value)`: Establece una cabecera de respuesta con el nombre y valor especificados.
+        -    `void addHeader(String name, String value)`: Añade un valor adicional a una cabecera de respuesta existente.
+-    <b>Escribir Contenido de Respuesta:
+        -    `PrintWriter getWriter()`: Devuelve un PrintWriter para escribir datos de texto en la respuesta.
+        -    `ServletOutputStream getOutputStream()`: Devuelve un ServletOutputStream para escribir datos binarios en la respuesta.
+-    <b>Establecer el Tipo de Contenido:
+        -    `void setContentType(String type)`: Establece el tipo de contenido de la respuesta (por ejemplo, text/html, application/json).
+-    <b>Manejo de Cookies:
+        -    `void addCookie(Cookie cookie)`: Añade una cookie a la respuesta.

@@ -211,3 +211,25 @@
 -    <b>Destrucción (`destroy()`):</b>
         -    <b>Descripción</b>: Cuando el contenedor de servlets decide que el `servlet` debe ser retirado de servicio (por ejemplo, durante el apagado del servidor o la recarga de la aplicación), llama al método `destroy()`. Este método se ejecuta una sola vez.
         -    <b>Propósito</b>: Liberar los recursos que fueron asignados durante la inicialización, como cerrar conexiones a bases de datos, liberar memoria, etc.
+
+<h1 align="center">@WebServlet</h1>
+<p>La anotación <b>@WebServlet</b> de Jakarta EE es utilizada para definir una clase de servlet y mapearla a una URL específica sin necesidad de configurar el servlet en el archivo web.xml. Esta anotación simplifica la configuración de servlets, proporcionando una forma más directa y menos propensa a errores para definir servlets y sus patrones de URL.</p>
+
+Ventajas de Utilizar `@WebServlet`:
+
+-    <b>Simplicidad</b>: Facilita la configuración y despliegue de servlets al eliminar la necesidad de editar el archivo `web.xml`.
+-    <b>Legibilidad</b>: La configuración está directamente en el código, lo que mejora la legibilidad y el mantenimiento.
+-    <b>Flexibilidad</b>: Permite la configuración de múltiples patrones de URL, parámetros de inicialización, y opciones de carga al inicio directamente en la anotación.
+
+<h2>extends HttpServlet</h2>
+<p>Heredar de la clase <b>HttpServlet</b> en Jakarta EE permite que el servlet maneje solicitudes HTTP de manera sencilla y eficiente. La clase <b>HttpServlet</b> proporciona una implementación base para los métodos de manejo de solicitudes HTTP, tales como doGet(), doPost(), doPut(), doDelete(), entre otros. Estos métodos son llamados por el contenedor de servlets para procesar las solicitudes HTTP correspondientes.</p>
+
+Razones para Heredar de `HttpServlet`:
+
+-    <b>Simplificación del Manejo de Solicitudes HTTP</b>: `HttpServlet` ofrece una abstracción conveniente para manejar solicitudes HTTP. Heredar de esta clase permite que el servlet se concentre en la lógica de negocio específica, en lugar de preocuparse por los detalles de bajo nivel del protocolo HTTP.
+
+-    <b>Métodos Predefinidos</b>: La clase `HttpServlet` tiene métodos predefinidos como `doGet()`, `doPost()`, `doPut()`, `doDelete()`, etc., que se pueden sobrescribir para implementar la lógica de manejo de solicitudes específica para cada tipo de solicitud HTTP.
+
+-    <b>Interfaz Simplificada</b>: `HttpServlet` implementa la interfaz Servlet y proporciona implementaciones predeterminadas para muchos de los métodos de la interfaz, facilitando la creación de servlets sin tener que implementar todos los métodos desde cero.
+
+-    <b>Compatibilidad con Contenedores de Servlets</b>: Al heredar de `HttpServlet`, el servlet es compatible con cualquier contenedor de servlets que cumpla con la especificación de Jakarta EE. Esto asegura que el servlet se comporte de manera consistente en diferentes entornos de ejecución.
